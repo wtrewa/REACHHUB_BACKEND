@@ -11,7 +11,7 @@ const auth = require('./middleware/auth');
 
 app.use(cors())
 app.use(express.json())
-app.use('/',auth,playerRouter)
+app.use('/',playerRouter)
 app.use('/user',userRouter)
 
 

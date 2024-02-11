@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const playerRouter = express.Router();
 
-playerRouter.get('/top-players', async (req, res) => {
+playerRouter.get('/top-players',auth, async (req, res) => {
     try {
         const topPlayers = await Player.find().limit(50)
 
@@ -21,7 +21,7 @@ playerRouter.get('/top-players', async (req, res) => {
     }
 });
 
-playerRouter.get('/player/:username/rating-history', async (req, res) => {
+playerRouter.get('/player/:username/rating-history',auth, async (req, res) => {
     try {
         const player = await Player.findOne({ username: req.params.username });
         if (!player) {
@@ -42,7 +42,7 @@ playerRouter.get('/player/:username/rating-history', async (req, res) => {
     }
 });
 
-playerRouter.get('/players/rating-history-csv', async (req, res) => {
+playerRouter.get('/players/rating-history-csv',auth, async (req, res) => {
     try {
         const players = await Player.find().limit(50);
 
