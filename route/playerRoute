@@ -1,7 +1,8 @@
 const express = require('express');
 const { fetchRatingHistory, fetchTopPlayers } = require('../fetchTopPlayers');
 const Player = require('../model/playerModel');
-const fs = require('fs')
+const fs = require('fs');
+const auth = require('../middleware/auth');
 
 const playerRouter = express.Router();
 
