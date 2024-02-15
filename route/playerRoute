@@ -29,7 +29,7 @@ playerRouter.get('/player/:username/rating-history',auth, async (req, res) => {
             return res.status(404).json({ error: 'Player not found' });
         }
         const { ratingHistory } = player;
-        const classicalRating = ratingHistory.find(entry => entry.name === 'Classical');
+        const classicalRating = ratingHistory?.find(entry => entry.name === 'Classical');
         if (!classicalRating) {
             return res.status(404).json({ error: 'Classical rating not found' });
         }
