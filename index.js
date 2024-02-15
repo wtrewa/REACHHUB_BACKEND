@@ -19,7 +19,7 @@ app.use('/user',userRouter)
 
 
 app.get('/',(req,res)=>{
-    res.send("hello world")
+    res.send("hello world this is home page")
 })
 
 const spacs = swaggerJSDoc()
